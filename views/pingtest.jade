@@ -1,0 +1,13 @@
+extend layout
+block content
+  div(class="mdl-shadow--8dp", id="maindiv")
+    h2 Ping Test
+    form(action="/pingtest", method="post")
+      div(class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label")
+        input(name="url", id="url", class="mdl-textfield__input")
+        label(class="mdl-textfield__label") Enter target...
+      input(type="submit", value="Ping", id="btsubmit", class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary")
+  div(class="mdl-shadow--8dp", id="resultdiv")
+    div(id="resultloading", class="mdl-progress mdl-js-progress mdl-progress__indeterminate", style="display:none;")
+    pre(id="result") #{result}
+    script(src="/js/pingtest.js")
